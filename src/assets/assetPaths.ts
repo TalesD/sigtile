@@ -18,6 +18,38 @@ export const servicesAssetPath = {
 	iconHardwood: "/assets/services/icon-hardwood.webp"
 } as const;
 
+// Services Full Screen Scroll Data
+export const servicesScrollData = [
+	{
+		id: "tile",
+		background: "/assets/gallery/tile-bathroom-01.jpg",
+		leftLabel: "Ceramic • Porcelain",
+		title: "Tile Installation",
+		rightLabel: "Stone • Mosaic"
+	},
+	{
+		id: "laminate",
+		background: "/assets/gallery/laminate-office-01.jpg",
+		leftLabel: "Durable • Affordable",
+		title: "Laminate Flooring",
+		rightLabel: "Pet-Friendly"
+	},
+	{
+		id: "vinyl",
+		background: "/assets/gallery/vinyl-plank-living-room-01.jpg",
+		leftLabel: "Waterproof • Modern",
+		title: "Vinyl Plank (LVP)",
+		rightLabel: "Easy Maintenance"
+	},
+	{
+		id: "hardwood",
+		background: "/assets/gallery/hardwood-bedroom-01.jpg",
+		leftLabel: "Timeless • Elegant",
+		title: "Hardwood Flooring",
+		rightLabel: "Premium Quality"
+	}
+] as const;
+
 // Projects Gallery Assets
 export const galleryAssetPath = {
 	project01: {
@@ -79,6 +111,62 @@ export const featuresAssetPath = {
 	fastInstallation: "/assets/features/fast-installation.jpg",
 	warrantyIncluded: "/assets/features/warranty-included.jpg"
 } as const;
+
+// Why Choose Us - Feature Steps Data
+export const whyChooseUsFeatures = [
+	{
+		step: "Step 1",
+		title: "Licensed & Insured",
+		content: "Fully licensed and insured flooring contractor. Your home and investment are protected throughout the entire installation process.",
+		image: "/assets/gallery/tile-bathroom-01.jpg"
+	},
+	{
+		step: "Step 2",
+		title: "Free Estimates",
+		content: "No-obligation free quotes with transparent pricing. We provide detailed estimates with no hidden fees or surprises.",
+		image: "/assets/gallery/vinyl-plank-living-room-01.jpg"
+	},
+	{
+		step: "Step 3",
+		title: "Fast Installation",
+		content: "Efficient work without compromising quality. Most residential flooring jobs are completed within days, minimizing disruption to your life.",
+		image: "/assets/gallery/hardwood-bedroom-01.jpg"
+	},
+	{
+		step: "Step 4",
+		title: "Warranty Included",
+		content: "All installations backed by our comprehensive workmanship warranty. We stand behind our work with confidence and commitment.",
+		image: "/assets/gallery/laminate-office-01.jpg"
+	}
+] as const;
+
+// FAQ Data
+export const faqData = [
+	{
+		question: "How long does flooring installation take?",
+		answer: "Most residential flooring projects take 1-3 days depending on the size and type of flooring. Tile installation may take longer due to grouting and drying time, while laminate and vinyl plank installations are typically faster. We'll provide an accurate timeline during your free estimate."
+	},
+	{
+		question: "What's the best flooring for kitchens and bathrooms?",
+		answer: "For moisture-prone areas like kitchens and bathrooms, we recommend ceramic or porcelain tile installation, or waterproof luxury vinyl plank (LVP) flooring. Both options are durable, water-resistant, and easy to maintain. Tile offers timeless appeal, while vinyl plank provides a modern look at a lower cost."
+	},
+	{
+		question: "Do you offer free flooring estimates in New Jersey?",
+		answer: "Yes! We provide free, no-obligation estimates for all flooring projects throughout New Jersey. Our team will visit your home, assess your space, discuss your preferences, and provide transparent pricing with no hidden fees. Call (732) 558-6559 to schedule your free consultation."
+	},
+	{
+		question: "What's the difference between laminate and vinyl plank flooring?",
+		answer: "Laminate flooring consists of compressed wood layers with a photographic layer on top, making it affordable and durable but not waterproof. Luxury vinyl plank (LVP) is 100% waterproof, making it ideal for bathrooms, basements, and kitchens. Both mimic the look of hardwood at a fraction of the cost."
+	},
+	{
+		question: "Are you a licensed and insured flooring contractor?",
+		answer: "Absolutely. SigTile is fully licensed and insured in New Jersey. We carry comprehensive liability insurance and workers' compensation coverage to protect your home and our team. You can trust us to deliver professional, safe, and high-quality flooring installation services."
+	},
+	{
+		question: "Do you provide a warranty on your flooring work?",
+		answer: "Yes, all of our installations come with a comprehensive workmanship warranty. Additionally, the flooring materials themselves typically carry manufacturer warranties. We stand behind our work and are committed to your complete satisfaction with every project we complete."
+	}
+] as const;
 
 // Type exports for TypeScript
 export type HeroAssetKey = keyof typeof heroAssetPath;

@@ -16,9 +16,12 @@ import {
   Boxes,
   TreeDeciduous
 } from 'lucide-react';
-import { galleryAssetPath, heroAssetPath } from './assets/assetPaths';
+import { galleryAssetPath, heroAssetPath, servicesScrollData, whyChooseUsFeatures, faqData } from './assets/assetPaths';
 import { Modal } from './components/ui/modal';
 import { Feature } from './components/ui/feature-with-image-comparison';
+import { FullScreenScrollFX } from './components/ui/full-screen-scroll-fx.jsx';
+import { FeatureSteps } from './components/ui/feature-section';
+import { FaqSection } from './components/ui/faq-section';
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -287,162 +290,47 @@ const LandingPage = () => {
         </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 md:py-32 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <motion.h2
-              {...fadeInUp}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            >
-              Professional Flooring Services
-            </motion.h2>
-            <motion.p
-              {...fadeInUp}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              From classic tile to modern vinyl plank, we install it all with precision and care
-            </motion.p>
-          </div>
+        {/* Why Choose Us Section - Feature Steps */}
+        <section className="py-20 md:py-32 bg-gray-50">
+            <FeatureSteps
+            features={whyChooseUsFeatures}
+            title="Why Choose SigTile?"
+            autoPlayInterval={4000}
+            imageHeight="h-[400px]"
+            />
+        </section>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {/* Tile Installation */}
-            <motion.article
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Grid3x3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Tile Installation</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ceramic, porcelain, and natural stone tile installation for kitchens, bathrooms, 
-                and entryways. Precision cuts and expert grouting for a flawless finish.
-              </p>
-            </motion.article>
-
-            {/* Laminate Flooring */}
-            <motion.article
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="bg-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Layers className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Laminate Flooring</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Durable, affordable laminate floor installation that mimics hardwood at a fraction 
-                of the cost. Perfect for high-traffic areas and pet-friendly homes.
-              </p>
-            </motion.article>
-
-            {/* Vinyl Plank (LVP) */}
-            <motion.article
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="bg-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Boxes className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Vinyl Plank (LVP)</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Waterproof luxury vinyl plank flooring installation. Modern, stylish, and 
-                incredibly resilient. Ideal for basements, kitchens, and bathrooms.
-              </p>
-            </motion.article>
-
-            {/* Hardwood Flooring */}
-            <motion.article
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="bg-amber-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <TreeDeciduous className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Hardwood Flooring</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Timeless hardwood floor installation, refinishing, and restoration. Add elegance 
-                and value to your home with classic oak, maple, or exotic hardwoods.
-              </p>
-            </motion.article>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <motion.h2
-              {...fadeInUp}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            >
-              Why Choose SigTile?
-            </motion.h2>
-            <motion.p
-              {...fadeInUp}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              Your trusted flooring contractor near me in New Jersey
-            </motion.p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            <motion.div variants={fadeInUp} className="text-center">
-              <div className="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Licensed & Insured</h3>
-              <p className="text-gray-600">
-                Fully licensed and insured flooring contractor. Your home is protected.
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="text-center">
-              <div className="bg-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Free Estimates</h3>
-              <p className="text-gray-600">
-                No-obligation free quotes. Transparent pricing with no hidden fees.
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="text-center">
-              <div className="bg-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Installation</h3>
-              <p className="text-gray-600">
-                Efficient work without compromising quality. Most jobs completed in days.
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="text-center">
-              <div className="bg-amber-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Warranty Included</h3>
-              <p className="text-gray-600">
-                All installations backed by our comprehensive workmanship warranty.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
+      {/* Services Section - Full Screen Scroll */}
+      <section id="services">
+        <FullScreenScrollFX
+          sections={servicesScrollData}
+          header={
+            <>
+              <div>Professional</div>
+              <div>Flooring Services</div>
+            </>
+          }
+          footer={
+            <div>
+              <img 
+                src={heroAssetPath.logoMain} 
+                alt="SigTile Logo" 
+                className="h-16 md:h-20 w-auto mx-auto"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+          }
+          showProgress={true}
+          durations={{ change: 0.7, snap: 800 }}
+          colors={{
+            text: "rgba(245,245,245,0.95)",
+            overlay: "rgba(0,0,0,0.4)",
+            pageBg: "#ffffff",
+            stageBg: "#1a1a1a",
+          }}
+          bgTransition="fade"
+          parallaxAmount={3}
+        />
       </section>
 
       {/* Recent Projects Gallery */}
@@ -646,110 +534,18 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 md:py-32 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <motion.h2
-              {...fadeInUp}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            >
-              Frequently Asked Questions
-            </motion.h2>
-            <motion.p
-              {...fadeInUp}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              Everything you need to know about our flooring installation services
-            </motion.p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto space-y-6"
-          >
-            {/* FAQ 1 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                How long does flooring installation take?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Most residential flooring projects take 1-3 days depending on the size and type of 
-                flooring. Tile installation may take longer due to grouting and drying time, while 
-                laminate and vinyl plank installations are typically faster. We'll provide an accurate 
-                timeline during your free estimate.
-              </p>
-            </motion.article>
-
-            {/* FAQ 2 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                What's the best flooring for kitchens and bathrooms?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                For moisture-prone areas like kitchens and bathrooms, we recommend ceramic or porcelain 
-                tile installation, or waterproof luxury vinyl plank (LVP) flooring. Both options are 
-                durable, water-resistant, and easy to maintain. Tile offers timeless appeal, while vinyl 
-                plank provides a modern look at a lower cost.
-              </p>
-            </motion.article>
-
-            {/* FAQ 3 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Do you offer free flooring estimates in New Jersey?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Yes! We provide free, no-obligation estimates for all flooring projects throughout New 
-                Jersey. Our team will visit your home, assess your space, discuss your preferences, and 
-                provide transparent pricing with no hidden fees. Call (732) 558-6559 to schedule your 
-                free consultation.
-              </p>
-            </motion.article>
-
-            {/* FAQ 4 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                What's the difference between laminate and vinyl plank flooring?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Laminate flooring consists of compressed wood layers with a photographic layer on top, 
-                making it affordable and durable but not waterproof. Luxury vinyl plank (LVP) is 100% 
-                waterproof, making it ideal for bathrooms, basements, and kitchens. Both mimic the look 
-                of hardwood at a fraction of the cost.
-              </p>
-            </motion.article>
-
-            {/* FAQ 5 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Are you a licensed and insured flooring contractor?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Absolutely. SigTile is fully licensed and insured in New Jersey. We carry comprehensive 
-                liability insurance and workers' compensation coverage to protect your home and our team. 
-                You can trust us to deliver professional, safe, and high-quality flooring installation 
-                services.
-              </p>
-            </motion.article>
-
-            {/* FAQ 6 */}
-            <motion.article variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Do you provide a warranty on your flooring work?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Yes, all of our installations come with a comprehensive workmanship warranty. Additionally, 
-                the flooring materials themselves typically carry manufacturer warranties. We stand behind 
-                our work and are committed to your complete satisfaction with every project we complete.
-              </p>
-            </motion.article>
-          </motion.div>
-        </div>
-      </section>
+      <FaqSection
+        id="faq"
+        title="Frequently Asked Questions"
+        description="Everything you need to know about our flooring installation services"
+        items={faqData}
+        contactInfo={{
+          title: "Still have questions?",
+          description: "We're here to help you with your flooring project",
+          buttonText: "Call (732) 558-6559",
+          onContact: () => window.location.href = 'tel:7325586559'
+        }}
+      />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
