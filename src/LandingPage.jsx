@@ -123,29 +123,30 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Sticky Header */}
+      {/* Sticky Header with Glass Effect */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="sticky top-0 z-50 bg-white shadow-md"
+        className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-white/50 shadow-lg"
       >
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/20 pointer-events-none" />
+        <nav className="relative container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <img 
               src={heroAssetPath.logoMain} 
               alt="SigTile Logo" 
-              className="h-10 w-auto"
+              className="h-10 w-auto drop-shadow-sm"
             />
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition">Services</a>
-            <a href="#projects" className="text-gray-700 hover:text-blue-600 transition">Projects</a>
-            <a href="#reviews" className="text-gray-700 hover:text-blue-600 transition">Reviews</a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 transition">FAQ</a>
+            <a href="#services" className="text-gray-800 hover:text-blue-600 transition font-medium">Services</a>
+            <a href="#projects" className="text-gray-800 hover:text-blue-600 transition font-medium">Projects</a>
+            <a href="#reviews" className="text-gray-800 hover:text-blue-600 transition font-medium">Reviews</a>
+            <a href="#faq" className="text-gray-800 hover:text-blue-600 transition font-medium">FAQ</a>
           </div>
           <a
             href="tel:7325586559"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center space-x-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center space-x-2 shadow-lg hover:shadow-xl"
           >
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">(732) 558-6559</span>
@@ -243,7 +244,7 @@ const LandingPage = () => {
                 to="/quiz"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg text-lg font-bold transition transform hover:scale-105 flex items-center space-x-2 shadow-2xl w-full sm:w-auto justify-center"
               >
-                <span>Take the Flooring Quiz</span>
+                <span>Get My Personalized Quote</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a

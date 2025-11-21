@@ -168,9 +168,46 @@ export const faqData = [
 	}
 ] as const;
 
+// Quiz Images Assets
+export const quizImagesPath = {
+	// Question 1: Room Selection
+	livingRoom: "/assets/quiz/living-room.jpg",
+	kitchen: "/assets/quiz/kitchen.jpg",
+	bathroom: "/assets/quiz/bathroom.jpg",
+	commercial: "/assets/quiz/commercial.jpg",
+	entireHome: "/assets/quiz/entire-home.jpg",
+	
+	// Question 2: Style Preference
+	modernMinimal: "/assets/quiz/style-modern.jpg",
+	cozyRustic: "/assets/quiz/style-rustic.jpg",
+	classicElegant: "/assets/quiz/style-elegant.jpg",
+	creativeColorful: "/assets/quiz/style-colorful.jpg",
+	notSure: "/assets/quiz/style-options.jpg",
+	
+	// Question 3: Priority Feature
+	durability: "/assets/quiz/feature-durability.jpg",
+	waterResistance: "/assets/quiz/feature-water.jpg",
+	comfortWarmth: "/assets/quiz/feature-comfort.jpg",
+	budgetFriendly: "/assets/quiz/feature-budget.jpg",
+	ecoFriendly: "/assets/quiz/feature-eco.jpg",
+	
+	// Question 4: Maintenance
+	easyCleaning: "/assets/quiz/maintenance-easy.jpg",
+	lowMaintenance: "/assets/quiz/maintenance-low.jpg",
+	periodicCare: "/assets/quiz/maintenance-periodic.jpg",
+	notConcern: "/assets/quiz/maintenance-beauty.jpg",
+	
+	// Question 5: Budget Range
+	budget: "/assets/quiz/budget-friendly.jpg",
+	midRange: "/assets/quiz/budget-mid.jpg",
+	premium: "/assets/quiz/budget-premium.jpg",
+	discussLater: "/assets/quiz/budget-discuss.jpg"
+} as const;
+
 // Type exports for TypeScript
 export type HeroAssetKey = keyof typeof heroAssetPath;
 export type ServicesAssetKey = keyof typeof servicesAssetPath;
 export type GalleryAssetKey = keyof typeof galleryAssetPath;
 export type ReviewsAssetKey = keyof typeof reviewsAssetPath;
 export type FeaturesAssetKey = keyof typeof featuresAssetPath;
+export type QuizImagesKey = keyof typeof quizImagesPath;
