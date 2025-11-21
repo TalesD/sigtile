@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import { GripVertical } from "lucide-react";
 
 interface FeatureProps {
@@ -15,7 +15,7 @@ function Feature({
   afterImage,
   title = "Amazing Transformation!",
   description = "See the stunning difference our professional flooring installation makes.",
-  badgeText = "Before & After"
+  // badgeText = "Before & After"
 }: FeatureProps) {
   const [inset, setInset] = useState<number>(50);
   const [onMouseDown, setOnMouseDown] = useState<boolean>(false);
