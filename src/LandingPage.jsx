@@ -242,10 +242,11 @@ const LandingPage = () => {
             >
               <Link
                 to="/quiz"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg text-lg font-bold transition transform hover:scale-105 flex items-center space-x-2 shadow-2xl w-full sm:w-auto justify-center"
+                className="relative backdrop-blur-xl bg-blue-600/50 hover:bg-blue-600/60 border border-blue-300/30 text-white px-10 py-5 rounded-lg text-lg font-bold transition-all transform hover:scale-105 flex items-center space-x-2 shadow-2xl w-full sm:w-auto justify-center overflow-hidden group"
               >
-                <span>Get My Personalized Quote</span>
-                <ArrowRight className="w-5 h-5" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-transparent to-blue-500/10 pointer-events-none" />
+                <span className="relative z-10">Get My Personalized Quote</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="tel:7325586559"
@@ -263,8 +264,9 @@ const LandingPage = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="mt-12 text-center"
             >
-              <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 rounded-full shadow-2xl">
-                <p className="text-white text-lg md:text-xl font-bold">
+              <div className="relative inline-block backdrop-blur-xl bg-blue-600/50 border border-blue-300/30 px-8 py-4 rounded-full shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-transparent to-blue-400/20 pointer-events-none" />
+                <p className="relative z-10 text-white text-lg md:text-xl font-bold">
                   🎉 FREE Estimates • Same-Day Response • No Obligation
                 </p>
               </div>
@@ -418,10 +420,11 @@ const LandingPage = () => {
           >
             <Link
               to="/quiz"
-              className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105 w-full sm:w-auto max-w-md"
+              className="relative inline-flex items-center justify-center space-x-2 backdrop-blur-xl bg-white/90 hover:bg-white border border-white/50 text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg font-bold transition-all transform hover:scale-105 w-full sm:w-auto max-w-md shadow-2xl overflow-hidden group"
             >
-              <span className="whitespace-nowrap">Get Your Free Quote</span>
-              <ArrowRight className="w-5 h-5 flex-shrink-0" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-white/20 pointer-events-none" />
+              <span className="relative z-10 whitespace-nowrap">Get Your Free Quote</span>
+              <ArrowRight className="w-5 h-5 flex-shrink-0 relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
