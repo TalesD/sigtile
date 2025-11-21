@@ -301,8 +301,8 @@ const LandingPage = () => {
             />
         </section>
 
-      {/* Services Section - Full Screen Scroll */}
-      <section id="services">
+      {/* Services Section - Full Screen Scroll (Hidden on Mobile) */}
+      <section id="services" className="hidden md:block">
         <FullScreenScrollFX
           sections={servicesScrollData}
           header={
