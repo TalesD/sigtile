@@ -122,7 +122,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden w-full">
       {/* Sticky Header with Glass Effect */}
       <motion.header
         initial={{ y: -100 }}
@@ -155,7 +155,7 @@ const LandingPage = () => {
       </motion.header>
 
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full bg-gray-900">
           <video
@@ -414,13 +414,14 @@ const LandingPage = () => {
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.2 }}
+            className="w-full flex justify-center px-4"
           >
             <Link
               to="/quiz"
-              className="inline-flex items-center space-x-2 bg-white text-blue-600 px-10 py-5 rounded-lg text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105"
+              className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105 w-full sm:w-auto max-w-md"
             >
-              <span>Get Your Free Quote</span>
-              <ArrowRight className="w-5 h-5" />
+              <span className="whitespace-nowrap">Get Your Free Quote</span>
+              <ArrowRight className="w-5 h-5 flex-shrink-0" />
             </Link>
           </motion.div>
         </div>
